@@ -1,0 +1,63 @@
+<form
+  [formGroup]="userForm"
+  fxLayoutAlign="center"
+  fxLayout="column"
+  (ngSubmit)="userForm.valid && !validateIdentification() && save()"
+>
+  <mat-form-field appearance="outline" floatLabel="always">
+    <mat-label>Nombre</mat-label>
+    <input
+      required
+      matInput
+      formControlName="firstname"
+      placeholder="Nombre de la locación"
+    />
+    <mat-error> Nombres es <strong>requerido</strong> </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline" floatLabel="always">
+    <mat-label>Apellido</mat-label>
+    <input
+      required
+      matInput
+      formControlName="lastname"
+      placeholder="Nombre de la locación"
+    />
+    <mat-error> Apellido es <strong>requerido</strong> </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" floatLabel="always">
+    <mat-label>Identificación</mat-label>
+    <input
+      required
+      matInput
+      type="number"
+      formControlName="identification"
+      placeholder="Nombre de la locación"
+    />
+    <mat-error> Identificación es <strong>requerido</strong> </mat-error>
+  </mat-form-field>
+  <mat-error *ngIf="validateIdentification()">
+    Identificación repetida <strong>Verifique</strong>
+  </mat-error>
+  <mat-form-field appearance="outline" floatLabel="always">
+    <mat-label>Fecha de nacimiento</mat-label>
+    <input
+      matInput
+      required
+      [matDatepicker]="dp3"
+      formControlName="birthdate"
+      [max]="maxDate"
+    />
+    <mat-error> Fecha de nacimiento es <strong>requerido</strong> </mat-error>
+    <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+    <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    style="background: #7ebc89; color: aliceblue;"
+    type="submit"
+    [disabled]="!userForm.valid || validateIdentification()"
+  >
+    Crear
+  </button>
+</form>

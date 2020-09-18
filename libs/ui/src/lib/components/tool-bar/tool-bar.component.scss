@@ -1,0 +1,23 @@
+mat-toolbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  // background: #FE5D26 error;
+  //background: #f2c078 warning;
+  background: #C1DBB3;
+  .logo {
+    height: 50px;
+    width: auto;
+    padding: 5px 15px 0 15px;
+
+    img {
+      height: 50px;
+      width: auto;
+    }
+  }
+  .title {
+    line-height: 60px;
+    color: #FAEDCA;
+  }
+}

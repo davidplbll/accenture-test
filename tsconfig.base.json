@@ -15,7 +15,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@accenture/ui": ["libs/ui/src/index.ts"],
+      "@accenture/user/*": ["apps/user-creator/src/app/user/*"],
+      "@environment": ["apps/user-creator/src/environments/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

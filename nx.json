@@ -28,6 +28,9 @@
     "user-creator-e2e": {
       "tags": [],
       "implicitDependencies": ["user-creator"]
+    },
+    "ui": {
+      "tags": []
     }
   }
 }
